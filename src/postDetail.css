@@ -1,0 +1,56 @@
+* {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.backAndDelete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.backAndDelete button {
+  height: 40px;
+  width: 150px;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+.titleAndCategory {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+.titleAndCategory div {
+  margin-bottom: 15px;
+}
+.explain {
+  font-size: 30px;
+}
+.card-title {
+  font-size: 40px;
+}
+.card-subtitle {
+  font-size: 30px;
+}
+.card-body p {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.customButton {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+.addButton {
+  margin-left: 20px;
+}
+.allPosts {
+  margin-top: 50px;
+}
+
+.nav {
+  display: flex;
+  margin-top: 10px;
+}
+.nav h3 {
+  font-family: "Pacifico", cursive;
+  width: 70%;
+  text-align: center;
+}
