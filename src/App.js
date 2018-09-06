@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
-import Home from "./home";
-import NewPost from "./newPost";
-import PostDetail from "./postDetail";
+import "./css/App.css";
+import Home from "./components/home";
+import NewPost from "./components/newPost";
+import PostDetail from "./components/postDetail";
 
 import { Route, Switch } from "react-router-dom";
 

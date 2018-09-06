@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./newPost.css";
+import "../css/newPost.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateAction } from "./actions";
+import { updateAction } from "../actions";
 
 class EditPost extends Component {
   constructor(props) {

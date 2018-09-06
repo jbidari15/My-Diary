@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./newPost.css";
+import "../css/newPost.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addAction, updateAction } from "./actions";
+import { addAction, updateAction } from "../actions";
 
 const uuidv1 = require("uuid/v1");
 
@@ -10,12 +10,21 @@ class NewPost extends Component {
   constructor(props) {
     super(props);
 
+    const today = new Date(),
+      date =
+        today.getDate() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getFullYear();
+
     this.state = {
       id: props.post.id || "",
       title: props.post.title || "",
       category: props.post.category || "",
       content: props.post.content || "",
-      editing: props.post.editing || false
+      editing: props.post.editing || false,
+      date: date
     };
   }
 
@@ -38,12 +47,12 @@ class NewPost extends Component {
 
   render() {
     return (
-      <form class="form-group" onSubmit={this.handleSubmit}>
+      <form className="form-group" onSubmit={this.handleSubmit}>
         <div className="titleAndCategory">
-          <div class="form-group" className="title">
+          <div className="form-group" className="title">
             <label htmlFor="Title">Title:</label>
             <input
-              class="form-control"
+              className="form-control"
               type="text"
               name="title"
               value={this.state.title}
@@ -53,17 +62,17 @@ class NewPost extends Component {
           <div className="category">
             <label htmlFor="Category">Category:</label>
             <input
-              class="form-control"
+              className="form-control"
               type="text"
               name="category"
               value={this.state.category}
               onChange={this.change}
             />
           </div>
-          <div class="form-group" className="newPost">
+          <div className="form-group" className="newPost">
             <label>Write New Post:</label>
             <textarea
-              class="form-control"
+              className="form-control"
               name="content"
               id="newPost"
               cols={30}
@@ -73,11 +82,11 @@ class NewPost extends Component {
             />
           </div>
           <div className="saveAndCancel">
-            <button class="btn btn-primary" type="submit">
+            <button className="btn btn-primary" type="submit">
               Save
             </button>
             <Link to="/">
-              <button class="btn btn-secondary">Cancel</button>
+              <button className="btn btn-secondary">Cancel</button>
             </Link>
           </div>
         </div>

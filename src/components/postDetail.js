@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./postDetail.css";
+import "../css/postDetail.css";
 import { Link } from "react-router-dom";
-import { deleteAction, editAction } from "./actions";
+import { deleteAction, editAction } from "../actions";
 import { connect } from "react-redux";
 import { Button } from "reactstrap";
 
@@ -25,24 +25,26 @@ class PostDetail extends Component {
                 {eachPost.category}
               </h6>
               <p className="card-text">{eachPost.content}</p>
-              <Link to="/">
-                <Button
-                  color="danger"
-                  onClick={() => this.props.deletePost(eachPost.id)}
-                >
-                  Delete Post
-                </Button>
-              </Link>
+              <div className="buttons">
+                <Link to="/">
+                  <Button
+                    color="danger"
+                    onClick={() => this.props.deletePost(eachPost.id)}
+                  >
+                    Delete Post
+                  </Button>
+                </Link>
 
-              <Button
-                color="success"
-                onClick={id => {
-                  this.props.editPost(this.props.match.params.id);
-                  this.props.history.push(`/posts/${eachPost.id}/edit`);
-                }}
-              >
-                Edit Post
-              </Button>
+                <Button
+                  color="success"
+                  onClick={id => {
+                    this.props.editPost(this.props.match.params.id);
+                    this.props.history.push(`/posts/${eachPost.id}/edit`);
+                  }}
+                >
+                  Edit Post
+                </Button>
+              </div>
             </div>
           </div>
         );
